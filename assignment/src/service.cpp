@@ -1,3 +1,13 @@
+/**
+ * \file service.cpp
+ * \brief Node to manage the correct drive mode according to the user choice
+ * \author Matteo Maragliano
+ * \version	1.0
+ * \date 27/02/2022
+ * 
+ * 
+**/
+
 #include "ros/ros.h"
 #include "std_srvs/Empty.h"
 #include "assignment/Service.h"

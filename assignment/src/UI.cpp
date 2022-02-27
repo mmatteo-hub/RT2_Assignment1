@@ -1,3 +1,12 @@
+/**
+ * \file UI.cpp
+ * \brief Node to manage all the UI (User Interface) actions
+ * \author Matteo Maragliano
+ * \version	1.0
+ * \date 27/02/2022
+ * 
+ * 
+**/
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
 #include "assignment/Service.h"
