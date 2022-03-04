@@ -1,23 +1,45 @@
 /**
  * \file UI.cpp
- * \brief Node to manage all the UI (User Interface) actions
+ * \brief Node to manage all the UI (User Interface) actions.
  * \author Matteo Maragliano
  * \version	1.0
  * \date 27/02/2022
  * 
+ * \details
+ * 
+ * Subscribers to: <BR>
+ * 
+ * Publisher to: <BR>
+ * 
+ * Services: <BR>
+ * /service This is the service used to pass to the service node the user choice inserted.
+ * 
+ * Description:
+ * 
+ * The node is used to manage all the UI (User Interface) actions. This is a way to have
+ * them divided from the normal execution of the program. In this way there is no possibility
+ * that the program waits for an input and so blocks the other processes to go on with the
+ * normal running.
  * 
 **/
+
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
 #include "assignment/Service.h"
 #include "move_base_msgs/MoveBaseGoal.h"
 
 // defining a client
-ros::ServiceClient client;
+ros::ServiceClient client; ///< Definition of the client
 
-// define a publisher 
-ros::Publisher pub;
-
+/**
+ * \brief Function to print the menù.
+ * \param
+ * 
+ * \return
+ * 
+ * This function is used to print the menù from which the user can choose a way to drive the robot.
+ * 
+**/
 // menu to show inside the main
 void menu()
 {
@@ -27,6 +49,14 @@ void menu()
 	std::cout << "\nType here: ";
 }
 
+/**
+ * \brief Function to print the menù for the driving assistance.
+ * \param
+ * 
+ * \return
+ * 
+ * This function is used to print the menù to allow the user to choose to have the driving assistance enabled or not.
+**/
 // menu for the drive manual
 void menuManual()
 {
@@ -36,6 +66,19 @@ void menuManual()
 	std::cout << "\nType here: ";
 }
 
+/**
+ * \brief Function to choose to have the driving assistance enabled or not.
+ * \param
+ * 
+ * \return
+ * 
+ * This function allows the user to choose if the driving assistance has to be enabled or not.
+ * The function processes the user coice and checks its validity; then the function enters
+ * a loop till the user enters the quit-loop command.
+ * Once the command has been inserted the function calls the service and pass the choice to
+ * the service node in order to be performed during the program execution.
+ * 
+**/
 // manual drive
 void manuallyDrive()
 {
@@ -97,6 +140,19 @@ void manuallyDrive()
 	}
 }
 
+/**
+ * \brief Callback function of the main
+ * \param
+ * 
+ * \return
+ * 
+ * This function is responsible of taking the user choice and sending it to the service bode.
+ * Since it is inside the main it is run in an infinite loop. In particular it prints the menù,
+ * after that it takes the user input; once here it checks that the choice is 2, if this condition
+ * is satified then it calls the function for the driving assistance, otherwise it calls the service
+ * to sends the input to the service node of the program.
+ * 
+**/
 // function to show the menù and give the input
 void callBack()
 {
@@ -134,6 +190,20 @@ void callBack()
 	client.call(s);
 }
 
+/**
+ * \brief Main function of the node
+ * \param
+ * 
+ * \return 0 if the program ends successfully
+ * 
+ * This is the main function of the node, responsible to make the program run.
+ * First of all it initializes the node, then the node handle to manage the client and
+ * eventually the subscribers if any.
+ * It calls the service to have it ready for the using and then spins the callback
+ * function. The spin is not performed with the ros::spin() structure since there is 
+ * not topic to subscribe to that allows this action.
+ * 
+**/
 // main
 int main(int argc, char ** argv)
 {
