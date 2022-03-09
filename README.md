@@ -11,7 +11,7 @@ The repository is divided into 4 different branches:
 
 Each one represents a different part for the documentation obtained in a different way.
 In particular:
-* **main** : it is the main branch with the original project code for the [RT1 Assignment3](https://github.com/mmatteo-hub/RT1_Assignment3);
+* **main** : it is the main branch with the original project code for the [RT1 Assignment3](https://github.com/mmatteo-hub/RT1_Assignment3) (remember to switch to the `noetic` branch to see the code);
 * **doxygen** : it is the branch with the *doxygen* documentation. All node functions are provided particular comment structure to allow the program working properly;
 * **jupyter** : it is the branch in which the UI is replaced by the *Jupyter* use;
 * **sphinx** : it is the branch with the *sphinx* documentation. It is provided the same code as *doxygen*-branch in order to make the *sphinx* program working properly.
