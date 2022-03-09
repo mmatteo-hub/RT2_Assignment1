@@ -2,6 +2,8 @@
 ## Documentation and new UI (User Interface) for the RT1 Assignment 3
 ### Professor [Carmine Recchiuto](https://github.com/CarmineD8), Student: [Matteo Maragliano](https://github.com/mmatteo-hub)
 
+## Master Branch <img src="https://user-images.githubusercontent.com/62358773/157435327-929ef025-418e-43d3-9056-1f21f7e7b1e9.png" width="5%" height="5%"></h2>
+
 #### Repository organization
 The repository is divided into 4 different branches:
 * **main**
