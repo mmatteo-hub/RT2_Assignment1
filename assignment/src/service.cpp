@@ -21,13 +21,13 @@
 #include "move_base_msgs/MoveBaseActionFeedback.h"
 
 // size for the array
-#define SIZE 144
+#define SIZE 144 ///< Size of the array
 
 // define for the distance
-#define th 0.5
+#define th 0.5 ///< Distance threashold for obstacle
 
 // define for the distance of the wall
-#define wth 1
+#define wth 1 ///< Distance from the wall
 
 // variable to determine the assistance during drive
 bool assistDrive = false; ///< Global variable to manage the drive assistance activation.
