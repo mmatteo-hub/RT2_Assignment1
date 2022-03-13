@@ -8,15 +8,21 @@
  * \details 
  * 
  * Subscriber to: <BR>
- * /move_base/feedback This is the topic to have always the status of the robot available for the use
- * /move_base/goal This topic allows the program have always the goal status available to perform the right flow of the program
- * /cmd_vel THis topic allows the program have always the robot's velocity available
- * /scan This topic is used to take the laser scan values and compute the distance of the robot from an obstacle
+ * /move_base/feedback This is the topic to have always the status of the robot available for the use.
+ 
+ * /move_base/goal This topic allows the program have always the goal status available to perform the right flow of the program.
+ 
+ * /cmd_vel THis topic allows the program have always the robot's velocity available.
+ 
+ * /scan This topic is used to take the laser scan values and compute the distance of the robot from an obstacle.
+ 
  * 
  * Publisher to: <BR>
- * /move_base/goal Topic used to publish the current goal inserted by the user
- * /move_base/cancel Topic to delete the current goal used by the robot
- * /cmd_vel Topic to publish the velocity the robot has to perform: used to stop the robot when deleting the goal or when there is an obstacle
+ * /move_base/goal Topic used to publish the current goal inserted by the user.
+ 
+ * /move_base/cancel Topic to delete the current goal used by the robot.
+ 
+ * /cmd_vel Topic to publish the velocity the robot has to perform: used to stop the robot when deleting the goal or when there is an obstacle.
  * 
  * Services: <BR>
  * /service This is the service used to take from the UI node the user choice inserted.
