@@ -24,7 +24,7 @@
    <div id="projectname">RT2_Assignment1
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Documentation for Assignmet</div>
+   <div id="projectbrief">Documentation for RT2_Assignment1</div>
   </td>
  </tr>
  </tbody>
@@ -110,13 +110,16 @@ Include dependency graph for service.cpp:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a70ed59adcb4159ac551058053e649640"><td class="memItemLeft" align="right" valign="top"><a id="a70ed59adcb4159ac551058053e649640"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SIZE</b>&#160;&#160;&#160;144</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="service_8cpp.html#a70ed59adcb4159ac551058053e649640">SIZE</a>&#160;&#160;&#160;144</td></tr>
+<tr class="memdesc:a70ed59adcb4159ac551058053e649640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the array. <br /></td></tr>
 <tr class="separator:a70ed59adcb4159ac551058053e649640"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13d252428836cb17e8183d427299d370"><td class="memItemLeft" align="right" valign="top"><a id="a13d252428836cb17e8183d427299d370"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>th</b>&#160;&#160;&#160;0.5</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="service_8cpp.html#a13d252428836cb17e8183d427299d370">th</a>&#160;&#160;&#160;0.5</td></tr>
+<tr class="memdesc:a13d252428836cb17e8183d427299d370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance threashold for obstacle. <br /></td></tr>
 <tr class="separator:a13d252428836cb17e8183d427299d370"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae62a5b19571be315331b379784dc04ba"><td class="memItemLeft" align="right" valign="top"><a id="ae62a5b19571be315331b379784dc04ba"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>wth</b>&#160;&#160;&#160;1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="service_8cpp.html#ae62a5b19571be315331b379784dc04ba">wth</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ae62a5b19571be315331b379784dc04ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance from the wall. <br /></td></tr>
 <tr class="separator:ae62a5b19571be315331b379784dc04ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -210,7 +213,14 @@ float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ser
 <div class="textblock"><p>Node to manage the correct drive mode according to the user choice. </p>
 <dl class="section author"><dt>Author</dt><dd>Matteo Maragliano </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>27/02/2022 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>27/02/2022</dd></dl>
+<p>Subscriber to: <br  />
+ /move_base/feedback This is the topic to have always the status of the robot available for the use /move_base/goal This topic allows the program have always the goal status available to perform the right flow of the program /cmd_vel THis topic allows the program have always the robot's velocity available /scan This topic is used to take the laser scan values and compute the distance of the robot from an obstacle</p>
+<p>Publisher to: <br  />
+ /move_base/goal Topic used to publish the current goal inserted by the user /move_base/cancel Topic to delete the current goal used by the robot /cmd_vel Topic to publish the velocity the robot has to perform: used to stop the robot when deleting the goal or when there is an obstacle</p>
+<p>Services: <br  />
+ /service This is the service used to take from the UI node the user choice inserted.</p>
+<p>Description: This node is the service node which allows the program compute the different choices inserted by the user. In particular the UI node sends the user choice through a service and the service node analizes the choice computing the different actions. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a6911e3fbd406f287be9ab539f0459c0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6911e3fbd406f287be9ab539f0459c0a">&#9670;&nbsp;</a></span>cancelGoal()</h2>

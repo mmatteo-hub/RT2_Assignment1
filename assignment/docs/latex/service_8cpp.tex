@@ -27,14 +27,14 @@ Include dependency graph for service.\+cpp\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{service_8cpp_a70ed59adcb4159ac551058053e649640}\label{service_8cpp_a70ed59adcb4159ac551058053e649640}} 
-\#define {\bfseries S\+I\+ZE}~144
-\item 
+\#define \mbox{\hyperlink{service_8cpp_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}}~144
+\begin{DoxyCompactList}\small\item\em Size of the array. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{service_8cpp_a13d252428836cb17e8183d427299d370}\label{service_8cpp_a13d252428836cb17e8183d427299d370}} 
-\#define {\bfseries th}~0.\+5
-\item 
+\#define \mbox{\hyperlink{service_8cpp_a13d252428836cb17e8183d427299d370}{th}}~0.\+5
+\begin{DoxyCompactList}\small\item\em Distance threashold for obstacle. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{service_8cpp_ae62a5b19571be315331b379784dc04ba}\label{service_8cpp_ae62a5b19571be315331b379784dc04ba}} 
-\#define {\bfseries wth}~1
-\end{DoxyCompactItemize}
+\#define \mbox{\hyperlink{service_8cpp_ae62a5b19571be315331b379784dc04ba}{wth}}~1
+\begin{DoxyCompactList}\small\item\em Distance from the wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -111,9 +111,18 @@ Matteo Maragliano
 1.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-27/02/2022 
+27/02/2022
 \end{DoxyDate}
+Subscriber to\+: ~\newline
+ /move\+\_\+base/feedback This is the topic to have always the status of the robot available for the use /move\+\_\+base/goal This topic allows the program have always the goal status available to perform the right flow of the program /cmd\+\_\+vel T\+His topic allows the program have always the robot\textquotesingle{}s velocity available /scan This topic is used to take the laser scan values and compute the distance of the robot from an obstacle
 
+Publisher to\+: ~\newline
+ /move\+\_\+base/goal Topic used to publish the current goal inserted by the user /move\+\_\+base/cancel Topic to delete the current goal used by the robot /cmd\+\_\+vel Topic to publish the velocity the robot has to perform\+: used to stop the robot when deleting the goal or when there is an obstacle
+
+Services\+: ~\newline
+ /service This is the service used to take from the UI node the user choice inserted.
+
+Description\+: This node is the service node which allows the program compute the different choices inserted by the user. In particular the UI node sends the user choice through a service and the service node analizes the choice computing the different actions. 
 
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{service_8cpp_a6911e3fbd406f287be9ab539f0459c0a}\label{service_8cpp_a6911e3fbd406f287be9ab539f0459c0a}} 
