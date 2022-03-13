@@ -1,14 +1,3 @@
-/**
- * \file service.cpp
- * \brief Node to manage the correct drive mode according to the user choice
- * \author Matteo Maragliano
- * \version	1.0
- * \date 27/02/2022
- * 
- * 
- * 
-**/
-
 #include "ros/ros.h"
 #include "std_srvs/Empty.h"
 #include "assignment/Service.h"
@@ -21,59 +10,45 @@
 #include "move_base_msgs/MoveBaseActionFeedback.h"
 
 // size for the array
-#define SIZE 144 ///< Size of the array
+#define SIZE 144
 
 // define for the distance
-#define th 0.5 ///< Distance threashold for obstacle
+#define th 0.5
 
 // define for the distance of the wall
-#define wth 1 ///< Distance from the wall
+#define wth 1
 
 // variable to determine the assistance during drive
-bool assistDrive = false; ///< Global variable to manage the drive assistance activation.
+bool assistDrive = false;
 //variable to allow the manual
-bool manual = false; ///< Global variable to manage the manual drive activation.
+bool manual = false;
 // variable to know if there is a goal
-bool G = false; ///< Global variable to determine the presence of a goal.
+bool G = false;
 
 // define publishers:
 // pub for the goal 
-ros::Publisher pub; ///< Defining a publisher for the goal publication.
+ros::Publisher pub;
 // pub to cancel the goal
-ros::Publisher pubCancel; ///< Defining a publisher for the goal deletion.
+ros::Publisher pubCancel;
 // pub to publishthe velocity
-ros::Publisher pubV; ///< Defining a publisher for the velocity publication.
+ros::Publisher pubV;
 
 // define a variable to publish
-move_base_msgs::MoveBaseActionGoal pose; ///< Global variable to store the position of the robot.
+move_base_msgs::MoveBaseActionGoal pose;
 
 // define a string to save the goal id
-std::string goalID; ///< Global variable to store the goal ID of the robot.
+std::string goalID;
 
 // define a variable for reading fields of the goal to cancel
-actionlib_msgs::GoalID goalToCancel; ///< Global variaible to store the ID of the goal that has to be deleted.
+actionlib_msgs::GoalID goalToCancel;
 
 // define a variable to publish the new velocity
-geometry_msgs::Twist n; ///< Global variable as message to pass data with a proper format.
+geometry_msgs::Twist n;
 
 // define variables to store the goal
-float xG; ///< Global variable to store the x-coordinate of the position inserted by the user.
-float yG; ///< Global variable to store the y-coordinate of the position inserted by the user.
+float xG;
+float yG;
 
-/**
- * \brief Function to set the goal of the robot.
- * \param float X and Y coordinates for the goal.
- * 
- * \return
- * 
- * The function takes as input the x and y value inserted by the user and set them as the target goal
- * that the robot has to reach.
- * It enters into the field ...position.x/y to set them, then sets the frame_id as map and the value
- * of the quaternion module to 1 (all to 0 except w to 1).
- * After having completed all these actions it publish the goal and set the variable G (the one to establish
- * the presence of a goal) to true so that the robot can know there is a goal to be reached.
- * 
-**/
 // function to set the parameters to the right field of the variable to publish
 void setPoseParams(float inX, float inY)
 {
@@ -94,18 +69,6 @@ void setPoseParams(float inX, float inY)
 	G = true;
 }
 
-/**
- * \brief Function to delete the actual goal.
- * \param
- * 
- * \return
- * 
- * This function is used to delete the actual goal that was previously set.
- * In particular the function checks the presence of the goal through the global variable G
- * and if there is a goal it takes the goal ID and publish through the cancel publisher; 
- * otherwise if there is any goal the function advertises the user with a print on the screen.
- * 
-**/
 // function to cancel the goal by the user input
 void cancelGoal()
 {
@@ -129,20 +92,6 @@ void cancelGoal()
 	}
 }
 
-/**
- * \brief Function to take the status: goal ID.
- * \param msg message from which infos regarding the robot's position are taken
- * 
- * \return
- * 
- * The function is set to keep periodically updated the current goal set: 
- * in particular the goal is periodically taken into a proper variable.
- * Moreover, if there is a goal already set, checked through the variable G,
- * and if the robot is sufficiently near the position speficied by the user
- * input (x and y coordinates) then the goal is automatically deleted to avoid
- * having it set even if the robot is not moving, thus saving memory space.
- * 
-**/
 // function to take the status: in particular the actual goal id
 void takeStatus(const move_base_msgs::MoveBaseActionFeedback::ConstPtr& msg)
 {
@@ -165,18 +114,6 @@ void takeStatus(const move_base_msgs::MoveBaseActionFeedback::ConstPtr& msg)
 	}
 }
 
-/**
- * \brief Function to store the current goal the robot has to rach.
- * \param m message from which infos regarding the robot's position are taken
- * 
- * \return
- * 
- * The function is used to take the robot goal in order to make it available
- * to the program to perform particular actions: for example the check of
- * the distance to allow the program delete it, or also to state that a 
- * particular position (x,y) inserted is not reachable by the robot.
- * 
-**/
 // function to store the current goal of the robot
 void currGoal(const move_base_msgs::MoveBaseActionGoal::ConstPtr& m)
 {
@@ -186,20 +123,6 @@ void currGoal(const move_base_msgs::MoveBaseActionGoal::ConstPtr& m)
 	yG = m -> goal.target_pose.pose.position.y;
 }
 
-/**
- * \brief Function to take the current velocity of the robot
- * \param m message from which infos regarding the robot are taken
- * 
- * \return
- * 
- * The function is used to read the robot's velocity.
- * In particular the function checks if the manual modality of driving
- * is enabled, throigh the manual global velocity; after that it also checks
- * the presence of the driving assistance through a proper variable; at the end
- * it stores the actual velocity of the robot into two different variables in order
- * to have them available.
- * 
-**/
 // function to take the velocity: always available the current vel of the robot
 void takeVel(const geometry_msgs::Twist::ConstPtr& m)
 {	
@@ -222,18 +145,6 @@ void takeVel(const geometry_msgs::Twist::ConstPtr& m)
 	n.angular.z = m -> angular.z;
 }
 
-/**
- * \brief Function to display infos about how to enter a valid position for the goal the robot has to reach.
- * \param
- * 
- * \return
- * 
- * The function is used to print the instruction that the user has to follow in order to publish
- * a valid position for the goal that the robot has to reach.
- * There is also a print about the coordinated system used in order to allow the user know how to
- * choose a position and how the robot locates it.
- * 
-**/
 // menu to display inside the switch
 void menu()
 {
@@ -245,21 +156,6 @@ void menu()
 	std::cout << "\nType here: ";
 }
 
-/**
- * \brief Function to compute the minimul valie among an array
- * \param a[] an array of double that contains values representing the distances
- * 
- * \return min_val the minimum value that is contained inside the array
- * 
- * The functon is used to compute the minimum value among an array with a certain dimension.
- * In particular, each array element represents the distance from an obstacle that is detected by the laser scan.
- * The robot is provided with 720 sensors, so the array will have that dimension (SIZE in the function); the
- * maximum distance that the robot can detect is 30 and this is the value that is set as the minimim inside the dist
- * variable of the function.
- * For each element inside of the array the function compares it with the dist variable and if it is lower that this one
- * then it is updated with the new minimum value. At the end of the execution the function returns the minimum value.
- * 
-**/
 // function to calculate the minimum distance among array values
 double min_val(double a[])
 {
@@ -281,24 +177,6 @@ double min_val(double a[])
 	return dist;
 }
 
-/**
- * \brief Function to enable/disable or quit the manual drive
- * \param input char that represents the command the user has inserted
- * 
- * \return
- * 
- * The function is used to enable, disable or quit the manual drive for the robot.
- * In particular there is a switch that takes as parameter a character inserted by
- * the user.
- * First of all the global variable manual is set to true to allow the user drive the
- * robot with the keyboard; then depending on the value read it is changed the value of
- * the global variable assistDrive (true when enabled, false when disabled) in order to
- * allow the program having or not the assistance during the drive.
- * At the end, when the user inserts the quit command (q) the function sets to false all
- * the two global variables, sets also to 0 the linear and angular velocity of the robot
- * and publishes them to stop the robot moving.
- * 
-**/
 // manual drive
 void manuallyDrive(char input)
 {
@@ -325,24 +203,6 @@ void manuallyDrive(char input)
 	}
 }
 
-/**
- * \brief Function to assit the robot while driving
- * \param m message containing all the distances of the obstacles detected by the robot's sensors
- * 
- * \return
- * 
- * The function is used to assist the robot while it is driving.
- * In particular the function checks that the assist drive modality in enabled (if not it quits)
- * then stores the distances value into an array with a proper dimension; then it divides this array
- * into 5 sub arrays (with dimension 144) in order to have different intervals to check.
- * Once that all the data are ready for the program, at each iteration the function checks that the
- * distance of the minimum value of the array is greater than a threshold (choosen by the programmer
- * and defined as a DEFINE at the beginning of the program); if the threshold is greater then the program
- * follows the normal flow, otherwise the function sets the linear and angular velocity to zero and
- * publish them to stop the robot thus avoiding a collision
- * Of course this step are computed for each sub array defined: the threshold may vary if choosen differently.
- * 
-**/
 // function to assist the robot driving
 void driveAssist(const sensor_msgs::LaserScan::ConstPtr &m)
 {
@@ -474,17 +334,6 @@ void driveAssist(const sensor_msgs::LaserScan::ConstPtr &m)
 	}
 }
 
-/**
- * \brief Function to set the drive modality according to the user input
- * \param req, res respectively the request and response of the service
- * 
- * \return boolean true or false
- * 
- * The function is used to set the drive modality according to the user input.
- * Once the user enters an input inside the UI this is passed to the service node by
- * a service: the request is used inside the switch case to set the modality.
- * 
-**/
 // switch to choose what to do given a certain input
 bool setDriveMod (assignment::Service::Request &req, assignment::Service::Response &res)
 {
@@ -541,23 +390,6 @@ bool setDriveMod (assignment::Service::Request &req, assignment::Service::Respon
 	return true;
 }
 
-/**
- * \brief Main function of the node
- * \param
- * 
- * \return
- * 
- * The main function is used to manage the node behaviour.
- * It is resppnsible of establishing the communication with the UI node and
- * making the robot move in the einvironment.
- * In particular it initializes the node handle, the publishers for the position,
- * node cancellation and the velocity when there is the user interaction.
- * The service has the aim to subscribe itself to the topics needed for the communication
- * with the other node.
- * The spi mode is done using the ros::spin() structure since there are periodic topics,
- * like the laser scan, that allow the structure.
- * 
-**/
 // main
 int main(int argc, char ** argv)
 {
