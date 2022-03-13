@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to RT2_Assignment1’s documentation! &mdash; RT2_Assignment1 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> RT2_Assignment1
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to RT2_Assignment1’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+<li><a class="reference internal" href="#cpp-service-node">Cpp service_node</a></li>
+<li><a class="reference internal" href="#cpp-ui-node">Cpp UI_node</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">RT2_Assignment1</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to RT2_Assignment1’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="welcome-to-rt2-assignment1-s-documentation">
+<h1>Welcome to RT2_Assignment1’s documentation!<a class="headerlink" href="#welcome-to-rt2-assignment1-s-documentation" title="Permalink to this headline"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="cpp-service-node">
+<h1>Cpp service_node<a class="headerlink" href="#cpp-service-node" title="Permalink to this headline"></a></h1>
+<p>Node to manage the correct drive mode according to the user choice. </p>
+<p><p>Subscriber to:</p>
+<p>/move_base/feedback This is the topic to have always the status of the robot available for the use.</p>
+<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Matteo Maragliano </p>
+</dd>
+<dt><strong>Version</strong></dt><dd><p>1.0 </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>27/02/2022</p>
+</dd>
+</dl>
+</p>
+<p>/move_base/goal This topic allows the program have always the goal status available to perform the right flow of the program.</p>
+<p>/cmd_vel This topic allows the program have always the robot’s velocity available.</p>
+<p>/scan This topic is used to take the laser scan values and compute the distance of the robot from an obstacle.</p>
+<p><p>Publisher to:</p>
+<p>/move_base/goal Topic used to publish the current goal inserted by the user.</p>
+</p>
+<p>/move_base/cancel Topic to delete the current goal used by the robot.</p>
+<p>/cmd_vel Topic to publish the velocity the robot has to perform: used to stop the robot when deleting the goal or when there is an obstacle.</p>
+<p><p>Services:</p>
+<p>/service This is the service used to take from the UI node the user choice inserted.</p>
+</p>
+<p>Description: This node is the service node which allows the program compute the different choices inserted by the user. In particular the UI node sends the user choice through a service and the service node analizes the choice computing the different actions. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.SIZE">
+<span class="target" id="service_8cpp_1a70ed59adcb4159ac551058053e649640"></span><span class="sig-name descname"><span class="n"><span class="pre">SIZE</span></span></span><a class="headerlink" href="#c.SIZE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Size of the array. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.th">
+<span class="target" id="service_8cpp_1a13d252428836cb17e8183d427299d370"></span><span class="sig-name descname"><span class="n"><span class="pre">th</span></span></span><a class="headerlink" href="#c.th" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Distance threashold for obstacle. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.wth">
+<span class="target" id="service_8cpp_1ae62a5b19571be315331b379784dc04ba"></span><span class="sig-name descname"><span class="n"><span class="pre">wth</span></span></span><a class="headerlink" href="#c.wth" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Distance from the wall. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413setPoseParamsff">
+<span id="_CPPv313setPoseParamsff"></span><span id="_CPPv213setPoseParamsff"></span><span id="setPoseParams__float.float"></span><span class="target" id="service_8cpp_1a890521a70172978804cdaf281c4b5058"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setPoseParams</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inX</span></span>, <span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">inY</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413setPoseParamsff" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to set the goal of the robot. </p>
+<p>
+The function takes as input the x and y value inserted by the user and set them as the target goal that the robot has to reach. It enters into the field …position.x/y to set them, then sets the frame_id as map and the value of the quaternion module to 1 (all to 0 except w to 1). After having completed all these actions it publish the goal and set the variable G (the one to establish the presence of a goal) to true so that the robot can know there is a goal to be reached. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>float</strong> – X and Y coordinates for the goal.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410cancelGoalv">
+<span id="_CPPv310cancelGoalv"></span><span id="_CPPv210cancelGoalv"></span><span id="cancelGoal"></span><span class="target" id="service_8cpp_1a6911e3fbd406f287be9ab539f0459c0a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cancelGoal</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410cancelGoalv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to delete the actual goal. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410takeStatusRKN14move_base_msgs22MoveBaseActionFeedback8ConstPtrE">
+<span id="_CPPv310takeStatusRKN14move_base_msgs22MoveBaseActionFeedback8ConstPtrE"></span><span id="_CPPv210takeStatusRKN14move_base_msgs22MoveBaseActionFeedback8ConstPtrE"></span><span id="takeStatus__move_base_msgs::MoveBaseActionFeedback::ConstPtrCR"></span><span class="target" id="service_8cpp_1a60a61cb42ee062b6782bcc39a63aa3bf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">takeStatus</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">move_base_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoveBaseActionFeedback</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410takeStatusRKN14move_base_msgs22MoveBaseActionFeedback8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to take the status: goal ID. </p>
+<p>
+The function is set to keep periodically updated the current goal set: in particular the goal is periodically taken into a proper variable. Moreover, if there is a goal already set, checked through the variable G, and if the robot is sufficiently near the position speficied by the user input (x and y coordinates) then the goal is automatically deleted to avoid having it set even if the robot is not moving, thus saving memory space. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – message from which infos regarding the robot’s position are taken</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48currGoalRKN14move_base_msgs18MoveBaseActionGoal8ConstPtrE">
+<span id="_CPPv38currGoalRKN14move_base_msgs18MoveBaseActionGoal8ConstPtrE"></span><span id="_CPPv28currGoalRKN14move_base_msgs18MoveBaseActionGoal8ConstPtrE"></span><span id="currGoal__move_base_msgs::MoveBaseActionGoal::ConstPtrCR"></span><span class="target" id="service_8cpp_1a7b3a86d9513c00df95a3019351e00061"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">currGoal</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">move_base_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoveBaseActionGoal</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48currGoalRKN14move_base_msgs18MoveBaseActionGoal8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to store the current goal the robot has to rach. </p>
+<p>
+The function is used to take the robot goal in order to make it available to the program to perform particular actions: for example the check of the distance to allow the program delete it, or also to state that a particular position (x,y) inserted is not reachable by the robot. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>m</strong> – message from which infos regarding the robot’s position are taken</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47takeVelRKN13geometry_msgs5Twist8ConstPtrE">
+<span id="_CPPv37takeVelRKN13geometry_msgs5Twist8ConstPtrE"></span><span id="_CPPv27takeVelRKN13geometry_msgs5Twist8ConstPtrE"></span><span id="takeVel__geometry_msgs::Twist::ConstPtrCR"></span><span class="target" id="service_8cpp_1a2c38b7bf238ee6a4bd51cfe140c3d87f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">takeVel</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">geometry_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Twist</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47takeVelRKN13geometry_msgs5Twist8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to take the current velocity of the robot. </p>
+<p>
+The function is used to read the robot’s velocity. In particular the function checks if the manual modality of driving is enabled, throigh the manual global velocity; after that it also checks the presence of the driving assistance through a proper variable; at the end it stores the actual velocity of the robot into two different variables in order to have them available. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>m</strong> – message from which infos regarding the robot are taken</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv44menuv">
+<span id="_CPPv34menuv"></span><span id="_CPPv24menuv"></span><span id="menu"></span><span class="target" id="service_8cpp_1a2a0e843767aeea4f433a28b9c54f573a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">menu</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44menuv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to display infos about how to enter a valid position for the goal the robot has to reach. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47min_valA_d">
+<span id="_CPPv37min_valA_d"></span><span id="_CPPv27min_valA_d"></span><span id="min_val__doubleA"></span><span class="target" id="service_8cpp_1ae0dfddff71559c8451ffd82cf1bb34e6"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">min_val</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47min_valA_d" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to compute the minimul valie among an array. </p>
+<p>
+The functon is used to compute the minimum value among an array with a certain dimension. In particular, each array element represents the distance from an obstacle that is detected by the laser scan. The robot is provided with 720 sensors, so the array will have that dimension (SIZE in the function); the maximum distance that the robot can detect is 30 and this is the value that is set as the minimim inside the dist variable of the function. For each element inside of the array the function compares it with the dist variable and if it is lower that this one then it is updated with the new minimum value. At the end of the execution the function returns the minimum value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>a[]</strong> – an array of double that contains values representing the distances</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>min_val the minimum value that is contained inside the array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413manuallyDrivec">
+<span id="_CPPv313manuallyDrivec"></span><span id="_CPPv213manuallyDrivec"></span><span id="manuallyDrive__c"></span><span class="target" id="service_8cpp_1a74eeefdaefa8e5ec4b48c6209aaeb02f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">manuallyDrive</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413manuallyDrivec" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to enable/disable or quit the manual drive. </p>
+<p>
+The function is used to enable, disable or quit the manual drive for the robot. In particular there is a switch that takes as parameter a character inserted by the user. First of all the global variable manual is set to true to allow the user drive the robot with the keyboard; then depending on the value read it is changed the value of the global variable assistDrive (true when enabled, false when disabled) in order to allow the program having or not the assistance during the drive. At the end, when the user inserts the quit command (q) the function sets to false all the two global variables, sets also to 0 the linear and angular velocity of the robot and publishes them to stop the robot moving. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> – char that represents the command the user has inserted</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv411driveAssistRKN11sensor_msgs9LaserScan8ConstPtrE">
+<span id="_CPPv311driveAssistRKN11sensor_msgs9LaserScan8ConstPtrE"></span><span id="_CPPv211driveAssistRKN11sensor_msgs9LaserScan8ConstPtrE"></span><span id="driveAssist__sensor_msgs::LaserScan::ConstPtrCR"></span><span class="target" id="service_8cpp_1ad92a1ab439081fef6e6c319e774e907f"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">driveAssist</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">sensor_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">LaserScan</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">m</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411driveAssistRKN11sensor_msgs9LaserScan8ConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to assit the robot while driving. </p>
+<p>
+The function is used to assist the robot while it is driving. In particular the function checks that the assist drive modality in enabled (if not it quits) then stores the distances value into an array with a proper dimension; then it divides this array into 5 sub arrays (with dimension 144) in order to have different intervals to check. Once that all the data are ready for the program, at each iteration the function checks that the distance of the minimum value of the array is greater than a threshold (choosen by the programmer and defined as a DEFINE at the beginning of the program); if the threshold is greater then the program follows the normal flow, otherwise the function sets the linear and angular velocity to zero and publish them to stop the robot thus avoiding a collision Of course this step are computed for each sub array defined: the threshold may vary if choosen differently. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>m</strong> – message containing all the distances of the obstacles detected by the robot’s sensors</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv411setDriveModRN10assignment7Service7RequestERN10assignment7Service8ResponseE">
+<span id="_CPPv311setDriveModRN10assignment7Service7RequestERN10assignment7Service8ResponseE"></span><span id="_CPPv211setDriveModRN10assignment7Service7RequestERN10assignment7Service8ResponseE"></span><span id="setDriveMod__assignment::Service::RequestR.assignment::Service::ResponseR"></span><span class="target" id="service_8cpp_1a8cdd6d065ca78e45cb762ecfcb2935e7"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">setDriveMod</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">assignment</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Service</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Request</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span>, <span class="n"><span class="pre">assignment</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Service</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Response</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411setDriveModRN10assignment7Service7RequestERN10assignment7Service8ResponseE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to set the drive modality according to the user input. </p>
+<p>
+The function is used to set the drive modality according to the user input. Once the user enters an input inside the UI this is passed to the service node by a service: the request is used inside the switch case to set the modality. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>req, res</strong> – respectively the request and response of the service</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>boolean true or false</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv44mainiPPc">
+<span id="_CPPv34mainiPPc"></span><span id="_CPPv24mainiPPc"></span><span id="main__i.cPP"></span><span class="target" id="service_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44mainiPPc" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Main function of the node. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv411assistDrive">
+<span id="_CPPv311assistDrive"></span><span id="_CPPv211assistDrive"></span><span id="assistDrive__b"></span><span class="target" id="service_8cpp_1a1e08fee95303ef1c51d7369649b0fb1c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">assistDrive</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv411assistDrive" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable to manage the drive assistance activation. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46manual">
+<span id="_CPPv36manual"></span><span id="_CPPv26manual"></span><span id="manual__b"></span><span class="target" id="service_8cpp_1ac3039562ceac7fca79eec81d1561b228"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">manual</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv46manual" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable to manage the manual drive activation. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv41G">
+<span id="_CPPv31G"></span><span id="_CPPv21G"></span><span id="G__b"></span><span class="target" id="service_8cpp_1adc50817b9a5196dce387a27280cf2c2c"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">G</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">false</span></span><a class="headerlink" href="#_CPPv41G" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable to determine the presence of a goal. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv43pub">
+<span id="_CPPv33pub"></span><span id="_CPPv23pub"></span><span id="pub__ros::Publisher"></span><span class="target" id="service_8cpp_1a350594df3e8f6948c8462edfd41ce086"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Publisher</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pub</span></span></span><a class="headerlink" href="#_CPPv43pub" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Defining a publisher for the goal publication. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv49pubCancel">
+<span id="_CPPv39pubCancel"></span><span id="_CPPv29pubCancel"></span><span id="pubCancel__ros::Publisher"></span><span class="target" id="service_8cpp_1af16f3cb6a089096b01458711b8a6eebb"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Publisher</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pubCancel</span></span></span><a class="headerlink" href="#_CPPv49pubCancel" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Defining a publisher for the goal deletion. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44pubV">
+<span id="_CPPv34pubV"></span><span id="_CPPv24pubV"></span><span id="pubV__ros::Publisher"></span><span class="target" id="service_8cpp_1acc3d127c97446f878d9550daf52cdb06"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Publisher</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pubV</span></span></span><a class="headerlink" href="#_CPPv44pubV" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Defining a publisher for the velocity publication. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv44pose">
+<span id="_CPPv34pose"></span><span id="_CPPv24pose"></span><span id="pose__move_base_msgs::MoveBaseActionGoal"></span><span class="target" id="service_8cpp_1a3d019b1517126a1fe3e5c258ffdf23b6"></span><span class="n"><span class="pre">move_base_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MoveBaseActionGoal</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pose</span></span></span><a class="headerlink" href="#_CPPv44pose" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable to store the position of the robot. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46goalID">
+<span id="_CPPv36goalID"></span><span id="_CPPv26goalID"></span><span id="goalID__ss"></span><span class="target" id="service_8cpp_1a36975d8f325eddfc16c5c17bd6116efd"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">goalID</span></span></span><a class="headerlink" href="#_CPPv46goalID" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable to store the goal ID of the robot. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv412goalToCancel">
+<span id="_CPPv312goalToCancel"></span><span id="_CPPv212goalToCancel"></span><span id="goalToCancel__actionlib_msgs::GoalID"></span><span class="target" id="service_8cpp_1a1c985d62869c1ba5fb80c7f01dff1f0b"></span><span class="n"><span class="pre">actionlib_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">GoalID</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">goalToCancel</span></span></span><a class="headerlink" href="#_CPPv412goalToCancel" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variaible to store the ID of the goal that has to be deleted. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv41n">
+<span id="_CPPv31n"></span><span id="_CPPv21n"></span><span id="n__geometry_msgs::Twist"></span><span class="target" id="service_8cpp_1ad8b22358bb104a13cb2016985daa07eb"></span><span class="n"><span class="pre">geometry_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Twist</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">n</span></span></span><a class="headerlink" href="#_CPPv41n" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable as message to pass data with a proper format. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv42xG">
+<span id="_CPPv32xG"></span><span id="_CPPv22xG"></span><span id="xG__float"></span><span class="target" id="service_8cpp_1add752d850860e74bb9d4b65aa31f1140"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">xG</span></span></span><a class="headerlink" href="#_CPPv42xG" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable to store the x-coordinate of the position inserted by the user. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv42yG">
+<span id="_CPPv32yG"></span><span id="_CPPv22yG"></span><span id="yG__float"></span><span class="target" id="service_8cpp_1a93b1a89dbf18ea027073e19a2a0adbbe"></span><span class="kt"><span class="pre">float</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">yG</span></span></span><a class="headerlink" href="#_CPPv42yG" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Global variable to store the y-coordinate of the position inserted by the user. </p>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="cpp-ui-node">
+<h1>Cpp UI_node<a class="headerlink" href="#cpp-ui-node" title="Permalink to this headline"></a></h1>
+<p>Node to manage all the UI (User Interface) actions. </p>
+<p>
+Subscribers to: <dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Matteo Maragliano </p>
+</dd>
+<dt><strong>Version</strong></dt><dd><p>1.0 </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>27/02/2022</p>
+</dd>
+</dl>
+</p>
+<p>Publisher to: </p>
+<p><p>Services:</p>
+<p>/service This is the service used to pass to the service node the user choice inserted.</p>
+</p>
+<p>Description:</p>
+<p>The node is used to manage all the UI (User Interface) actions. This is a way to have them divided from the normal execution of the program. In this way there is no possibility that the program waits for an input and so blocks the other processes to go on with the normal running. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="_u_i_8cpp_1a2a0e843767aeea4f433a28b9c54f573a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">menu</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Function to print the menù. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410menuManualv">
+<span id="_CPPv310menuManualv"></span><span id="_CPPv210menuManualv"></span><span id="menuManual"></span><span class="target" id="_u_i_8cpp_1aca35e87e46ab93aa86a43ca70d6f9916"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">menuManual</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410menuManualv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to print the menù for the driving assistance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413manuallyDrivev">
+<span id="_CPPv313manuallyDrivev"></span><span id="_CPPv213manuallyDrivev"></span><span id="manuallyDrive"></span><span class="target" id="_u_i_8cpp_1a32fed739394c915f5e440f18653fcad9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">manuallyDrive</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413manuallyDrivev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Function to choose to have the driving assistance enabled or not. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv48callBackv">
+<span id="_CPPv38callBackv"></span><span id="_CPPv28callBackv"></span><span id="callBack"></span><span class="target" id="_u_i_8cpp_1a6672c1ad49b9e73a957b73711f62fec0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">callBack</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48callBackv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Callback function of the main. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="_u_i_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>Main function of the node. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Param </dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv46client">
+<span id="_CPPv36client"></span><span id="_CPPv26client"></span><span id="client__ros::ServiceClient"></span><span class="target" id="_u_i_8cpp_1a17bcd065930a8a7f9f194078d9977268"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ServiceClient</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">client</span></span></span><a class="headerlink" href="#_CPPv46client" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Definition of the client. </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Matteo Maragliano.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
