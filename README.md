@@ -61,7 +61,7 @@ We can see that in the folder we specified as *destination folder* we will have 
 * latex (latex documentation)
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158230379-3c1a609e-e437-4c90-9f94-90f70d162e8a.png" width="5%" height="5%"> Directory organization
-Inside this project the *destination directory* is the [`docs`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs) folder where we can find the two other directories [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) and [`latex`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/latex).
+Inside this project the *destination directory* there is the [`docs`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs) folder where we can find the two other directories [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) and [`latex`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/latex).
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158228247-fe97068d-5dbd-431b-bc88-2f3b16f7dd63.png" width="5%" height="5%"> HTML result for the documentation
 
