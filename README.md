@@ -2,7 +2,7 @@
 
 In this branch there is the documentation provided with the use of Doxygen. It is a particular tool that is installed inside the Docker image that allows the user to have a documentation in a `.html` file, more readable and accessible.
 
-## Pre-requisites for Doxygen
+## <img src="https://user-images.githubusercontent.com/62358773/158230910-3ac2495f-208a-4e3c-a259-ab59f80e9d91.png" width="5%" height="5%"> Pre-requisites for Doxygen
 ### <img src="https://user-images.githubusercontent.com/62358773/158229723-84059fcb-d76e-41ad-a527-7b5e17a6fcd9.png" width="5%" height="5%"> Installation
 In order to use Doxygen inside the Docker image we have to install it by typing: `apt-get instal -y doxygen`; moreover it is provided of a GUI (Graphical User Interface) to make the documentation building simpler: this can be installed by typing `atp-get install doxygen-gui`.
 
