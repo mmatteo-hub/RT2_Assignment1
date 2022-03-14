@@ -57,12 +57,12 @@ We have that kind of window:
 
 Once defined all the fieds with the proper arguments can press the `next` button and `run` (at the end of the process).
 We can see that in the folder we specified as *destination folder* we will have two different folders:
-* html (hatml documentation)
+* html (html documentation)
 * latex (latex documentation)
 
 ### Directory organization
 Inside this project the *destination directory* is the [`docs`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs) folder where we can find the two other directories [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) and [`latex`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/latex).
 
-#### See the result for the documentation
+### See the result for the documentation
 <img src="https://user-images.githubusercontent.com/62358773/158228247-fe97068d-5dbd-431b-bc88-2f3b16f7dd63.png" width="5%" height="5%">
 By double-clicking on *index.html* inside the [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) directory (or by opening it with a browser) we can see the result of the documentation provided by the Doxygen tool.
