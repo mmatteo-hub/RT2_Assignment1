@@ -8,8 +8,8 @@ In order to use Doxygen inside the Docker image we have to install it by typing:
 
 ### <img src="https://user-images.githubusercontent.com/62358773/158229276-daab681f-3322-4537-a913-043d805ede11.png" width="5%" height="5%"> Code preparation
 Doxygen is used for the `C++` files, but they have to be "prepared" in such a way the program can choose and take the right part to document.
-Without entering in the details of the documentation building, we have to add particular comments in a proper format to the code:
-For each function (we want to document) we have to add:
+Without entering in the details of the documentation building, we have to add particular comments in a proper format to the code.
+For each function (we want to document) we have to add before the implementation of it theese lines of comments:
 ```cpp
 /**
  * \brief Brief description of the function
@@ -21,7 +21,7 @@ For each function (we want to document) we have to add:
  * 
 **/
 ```
-Moreover, we can add a general comment for the entire file:
+Moreover, we can add a general comment for the entire file, at the beginning of it, before writing anything related to the code:
 ```cpp
 /**
  * \file Name of the .cpp file
@@ -47,7 +47,7 @@ Moreover, we can add a general comment for the entire file:
  * 
 **/
 ```
-Once we have done this for all our files and for all the function we want to document we are ready.
+Once we have done this for all our files and for all the function we want to document we are ready to pass to the next step.
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158230063-f844e068-8486-4eca-a694-20ee48a7234f.png" width="5%" height="5%"> Documentation generation
 To generate the documentation we have to call the tool `doxywizard` by the terminal that allows us to have an interface to complete the documentation building.
