@@ -68,4 +68,5 @@ Inside this project the *destination directory* is the [`docs`](https://github.c
 ## <img src="https://user-images.githubusercontent.com/62358773/158228247-fe97068d-5dbd-431b-bc88-2f3b16f7dd63.png" width="5%" height="5%"> HTML result for the documentation
 
 Here it is explained how to visualize the output of the *HTML* documentation; remember that we are talking when we are in our Docker image in this case.
+
 By double-clicking on *index.html* inside the [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) directory (or by opening it with a browser) we can see the result of the documentation provided by the Doxygen tool.
