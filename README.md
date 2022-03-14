@@ -51,18 +51,21 @@ Once we have done this for all our files and for all the function we want to doc
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158230063-f844e068-8486-4eca-a694-20ee48a7234f.png" width="5%" height="5%"> Documentation generation
 To generate the documentation we have to call the tool `doxywizard` by the terminal that allows us to have an interface to complete the documentation building.
-We have that kind of window:
+We have this kind of window:
 
 <img src="https://user-images.githubusercontent.com/62358773/158227235-e41e1232-3aee-4503-8097-d630dba64f98.jpg" width=50% height=50%>
 
-Once defined all the fieds with the proper arguments can press the `next` button and `run` (at the end of the process).
+Once defined all the fieds with the proper arguments (see the boxes in the figure), we can press the `next` button and, once arrived at the end, the `run` one.
 We can see that in the folder we specified as *destination folder* we will have two different folders:
 * html (html documentation)
 * latex (latex documentation)
 
+as it is explained in the next section.
+
 ## <img src="https://user-images.githubusercontent.com/62358773/158230379-3c1a609e-e437-4c90-9f94-90f70d162e8a.png" width="5%" height="5%"> Directory organization
-Inside this project the *destination directory* there is the [`docs`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs) folder where we can find the two other directories [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) and [`latex`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/latex).
+Inside this project the *destination directory* is the [`docs`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs) folder where we can find the two other directories: [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) and [`latex`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/latex) each one providing the documentation in a proper format.
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158228247-fe97068d-5dbd-431b-bc88-2f3b16f7dd63.png" width="5%" height="5%"> HTML result for the documentation
 
+Here it is explained how to visualize the output of the *HTML* documentation; remember that we are talking when we are in our Docker image in this case.
 By double-clicking on *index.html* inside the [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) directory (or by opening it with a browser) we can see the result of the documentation provided by the Doxygen tool.
