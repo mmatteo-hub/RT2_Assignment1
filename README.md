@@ -1,4 +1,4 @@
-# Research Track2: Assignment #1
+# Research Track 2: Assignment #1
 ## <img src="https://user-images.githubusercontent.com/62358773/158240285-e5cf386b-233d-445e-ab4a-1a14976d39a4.png" width="5%" height="5%"> Code documentation and new <img src="https://user-images.githubusercontent.com/62358773/158241494-e5a35341-0032-4ecf-b57d-bb0d8a4c1814.png" width="5%" height="5%"> UI (User Interface) for the RT1 Assignment 3
 ### <img src="https://user-images.githubusercontent.com/62358773/158238820-f418cc09-4227-4afc-9c31-1705dfb64f5a.png" width="5%" height="5%"> Professor [Carmine Recchiuto](https://github.com/CarmineD8), <img src="https://user-images.githubusercontent.com/62358773/158238810-c5dcb486-ba24-4b35-87de-39a54e88f36b.png" width="5%" height="5%"> Student: [Matteo Maragliano](https://github.com/mmatteo-hub)
 
