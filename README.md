@@ -1,5 +1,6 @@
 # Sphinx branch <img src="https://user-images.githubusercontent.com/62358773/157435708-d0d6175d-b03d-4c89-a63b-fe3ad1ff269f.png" width="5%" height="5%"></h2>
 In this branch there is the documentation provided with the use of Sphinx. It is a particular tool that is installed inside the Docker image that allows the user to have a documentation in a `.html` file, more readable and accessible.
+The tool is provided for the Python code but can be also used to have documentation for the C++ code, as in our case.
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158230910-3ac2495f-208a-4e3c-a259-ab59f80e9d91.png" width="5%" height="5%"> Pre-requisites for Sphinx
 ### <img src="https://user-images.githubusercontent.com/62358773/158229723-84059fcb-d76e-41ad-a527-7b5e17a6fcd9.png" width="5%" height="5%"> Installation
@@ -11,11 +12,11 @@ The preparation of the code is the same as the Doxygen one so, to avoid the repe
 ## <img src="https://user-images.githubusercontent.com/62358773/158230063-f844e068-8486-4eca-a694-20ee48a7234f.png" width="5%" height="5%"> Documentation generation
 To start the creation of the documentation we have to type `sphinx-quickstart` on the terminal.
 We are asked to insert:
-* *Division of the folder [y/n]*: *n* (a common use is no type no to this question)
-* *Name of the project*: the project name that will be present in the files that will be created
-* *Author*: insert the author name
-* *Project release*: insert the version of the code
-* *Language [en]*: *en* (a common use is to set *en* = *English*)
+* *Separate source and build directories (y/n) [n]*: *n* (a common use is *n*, no, as suggested in *[]*)
+* *Project name*: the project name that will be present in the files that will be created
+* *Author name(s)*: insert the author name
+* *Project release []*: insert the version of the code
+* *Project language [en]*: *en* (a common use is to set *en* = *English* as suggested in *[]*)
 
 The output we will see is the following:
 
@@ -23,12 +24,12 @@ The output we will see is the following:
 
 After that we are ready to proceede with the creation of the documentation.
 We have to open again the UI for Doxygen by the `doxywizard` shell command and we follow the same steps as for the Doxygen documentation ([here](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen) in the *Documentation generation* section).
-We have to keep attention to some differences:
+We have to keep attention to few differences:
 * the destination folder is *_build*;
 * we untick the *HTML* and *Latex* options inside the menù but we tick the *XML* one;
-* at the end of the preparation we do not have to run the Doxygen but to save the file as *Doxyfile.in* inside the package.
+* at the end of the preparation we do not have to run the Doxygen but we hvae to save the file as *Doxyfile.in* inside the package directory.
 
-Once this step is over we have to modify another file that was created with the *sphinx-quickstart* command: the *conf.py* file.
+Once this step is over we still have to modify another file that was created with the *sphinx-quickstart* command: the *conf.py* file.
 We have to add:
 ```python
 import os
@@ -39,7 +40,7 @@ sys.path.insert(0, os.path.abspath('.'))
 subprocess.call('doxygen Doxyfile.in', shell=True)
 ```
 just after the comments present.
-Later we can add some useful extension in the apposit empty "array" present:
+Later we can add some useful extension in the apposit empty "array" already in the file:
 ```python
 extensions = [
 	'sphinx.ext.autodoc',
@@ -56,7 +57,7 @@ extensions = [
 	'breathe'
 ]
 ```
-Very important is the section *Option for HTML output* where we have to inser:
+Very important is the section *Option for HTML output* where we have to insert:
 ```python
 highlight_language = 'c++' 
 source_suffix = '.rst'
@@ -73,10 +74,13 @@ breathe_default_project = "RT2_Assignment1"
 breathe_default_members = ('members', 'undoc-members')
 ```
 to set the project output ([*_build*](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx/assignment/_build) folder).
+The complete file can be found [here](https://github.com/mmatteo-hub/RT2_Assignment1/blob/sphinx/assignment/conf.py).
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158230379-3c1a609e-e437-4c90-9f94-90f70d162e8a.png" width="5%" height="5%"> Directory organization
 Inside this project the *destination directory* there is the [`_build`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx/assignment/_build) folder where we can find the three other directories [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx/assignment/_build/html) and [`xml`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx/assignment/_build/xml) and [`doctrees`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx/assignment/_build/doctrees).
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158228247-fe97068d-5dbd-431b-bc88-2f3b16f7dd63.png" width="5%" height="5%"> HTML result for the documentation
 
-By double-clicking on *index.html* inside the [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx/assignment/_build/html) directory (or by opening it with a browser) we can see the result of the documentation provided by the Doxygen tool.
+Here it is explained how to visualize the output of the *HTML* documentation; remember that we are talking when we are in our Docker image in this case.
+
+By double-clicking on *index.html* inside the [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx/assignment/_build/html) directory (or by opening it with a browser) we can see the result of the documentation provided by the Sphinx tool.
