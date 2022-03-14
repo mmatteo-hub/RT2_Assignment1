@@ -49,7 +49,7 @@ Moreover, we can add a general comment for the entire file:
 ```
 Once we have done this for all our files and for all the function we want to document we are ready.
 
-### <img src="https://user-images.githubusercontent.com/62358773/158230063-f844e068-8486-4eca-a694-20ee48a7234f.png" width="5%" height="5%"> Documentation generation
+## <img src="https://user-images.githubusercontent.com/62358773/158230063-f844e068-8486-4eca-a694-20ee48a7234f.png" width="5%" height="5%"> Documentation generation
 To generate the documentation we have to call the tool `doxywizard` by the terminal that allows us to have an interface to complete the documentation building.
 We have that kind of window:
 
@@ -60,9 +60,9 @@ We can see that in the folder we specified as *destination folder* we will have 
 * html (html documentation)
 * latex (latex documentation)
 
-### <img src="https://user-images.githubusercontent.com/62358773/158230379-3c1a609e-e437-4c90-9f94-90f70d162e8a.png" width="5%" height="5%"> Directory organization
+## <img src="https://user-images.githubusercontent.com/62358773/158230379-3c1a609e-e437-4c90-9f94-90f70d162e8a.png" width="5%" height="5%"> Directory organization
 Inside this project the *destination directory* is the [`docs`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs) folder where we can find the two other directories [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) and [`latex`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/latex).
 
-### <img src="https://user-images.githubusercontent.com/62358773/158228247-fe97068d-5dbd-431b-bc88-2f3b16f7dd63.png" width="5%" height="5%"> HTML result for the documentation
+## <img src="https://user-images.githubusercontent.com/62358773/158228247-fe97068d-5dbd-431b-bc88-2f3b16f7dd63.png" width="5%" height="5%"> HTML result for the documentation
 
 By double-clicking on *index.html* inside the [`html`](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen/assignment/docs/html) directory (or by opening it with a browser) we can see the result of the documentation provided by the Doxygen tool.
