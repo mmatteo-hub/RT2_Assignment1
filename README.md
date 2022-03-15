@@ -7,6 +7,9 @@ The functionalities that is will have are the same as the UI node, but in this c
 ### <img src="https://user-images.githubusercontent.com/62358773/158229723-84059fcb-d76e-41ad-a527-7b5e17a6fcd9.png" width="5%" height="5%"> Installation
 In order to use the Jupyter tool inside our Docker image we have it installed (we were provided an image with it already installed by typing on the terminal `docker run -it --name my_jupyter -p 6080:80 -p 5900:5900 -p 8888:8888 carms84/noetic_ros2`. In this case we reserv a port (the 8888) and this will be useful for a future use.
 The notebook will be visible inside the docker image by typing `http://localhost:8888` on the browser.
+This will allow only the use of the *8888* port; if we want to use another post we will have to reserve it during the launch of the Docker image with the same specification as for the first one.
+Be careful when creating a new image because we will have to re-install all the packages and extension useful.
+
 ### <img src="https://user-images.githubusercontent.com/62358773/158412884-3a11ce0f-560c-486b-ac46-af641413d6f0.png" width="5%" height="5%"> Visibility on the host side
 In order to make the Notebook visible also out of the Docker image we can type `jupyter notebook --allow-root --ip 0.0.0.0` and we can type the same command for the visibility in our Browser, thus seen the same result.
 
