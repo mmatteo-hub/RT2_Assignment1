@@ -7,7 +7,7 @@ The functionalities that is will have are the same as the UI node, but in this c
 ### <img src="https://user-images.githubusercontent.com/62358773/158229723-84059fcb-d76e-41ad-a527-7b5e17a6fcd9.png" width="5%" height="5%"> Installation
 In order to use the Jupyter tool inside our Docker image we have it installed (we were provided an image with it already installed by typing on the terminal `docker run -it --name my_jupyter -p 6080:80 -p 5900:5900 -p 8888:8888 carms84/noetic_ros2`. In this case we reserv a port (the 8888) and this will be useful for a future use.
 The notebook will be visible inside the docker image by typing `http://localhost:8888` on the browser.
-#### <img src="https://user-images.githubusercontent.com/62358773/158412884-3a11ce0f-560c-486b-ac46-af641413d6f0.png" width="5%" height="5%"> Visibility on the host side
+### <img src="https://user-images.githubusercontent.com/62358773/158412884-3a11ce0f-560c-486b-ac46-af641413d6f0.png" width="5%" height="5%"> Visibility on the host side
 In order to make the Notebook visible also out of the Docker image we can type `jupyter notebook --allow-root --ip 0.0.0.0` and we can type the same command for the visibility in our Browser, thus seen the same result.
 
 ### <img src="https://user-images.githubusercontent.com/62358773/158413804-bf7cde69-d192-4b9e-ac45-f1bc4165ab5f.png" width="5%" height="5%"> Jupyter Lab
@@ -22,3 +22,5 @@ For JupyterLab we need to install Node.js by
 
 #### <img src="https://user-images.githubusercontent.com/62358773/158414765-dfc2465d-e3a4-4813-a82e-0f27bf706416.png" width="2.5%" height="2.5%"> Extension
 There are many extension that can be installed by using the *extension menù* that the Lab provides.
+
+## <img src="https://user-images.githubusercontent.com/62358773/158417191-e4bd7959-d3cf-4e40-a724-8148367d9528.png" width="5%" height="5%"> Code
