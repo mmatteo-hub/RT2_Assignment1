@@ -27,3 +27,28 @@ For JupyterLab we need to install Node.js by
 There are many extension that can be installed by using the *extension menù* that the Lab provides.
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158417191-e4bd7959-d3cf-4e40-a724-8148367d9528.png" width="5%" height="5%"> Code
+### <img src="https://user-images.githubusercontent.com/62358773/160856680-a9410ea2-6974-4750-bab5-e53238033494.png" width="5%" height="5%"> Launching the simulation
+In order to launch the simulation we provided a `.launch` file to display only *Rviz* and *Gazebo* (even if this last one is not so useful).
+For the robot simulation we have to type `roslaunc assignment assignment_jupyter.launch`.
+Moreover, to use the *Jupyter* User Interface implemented we cam use the command written above (`jupyter notebook --allow-root --ip 0.0.0.0`).
+
+### <img src="https://user-images.githubusercontent.com/62358773/160858871-3f3243f6-a0d6-42bb-9735-9f831b6f0d53.png" width="5%" height="5%"> Program explanation
+Once bot the simulation and the Notebook are running we can interact with the robot through the UI provided.
+We basically reproduced the same already present, so the main functionalities are four:
+* Publish a position *(x,y)* that the robot has to reach;
+  [figure of the pub pos]
+* Drive the robot with the keyboard (here substituted by a graphics representing a keyboard);
+  [figure of the keyboard]
+* Cancel the current goal;
+  [[figure of the cancel goal]]
+* Quit the program.
+  [figure of the quit]
+
+The program is also provided a map representing the same thing of *Rviz*, to make the user able to know what the robot is doing also without the utilization of *Rviz*.
+
+### <img src="https://user-images.githubusercontent.com/62358773/160860930-875e5445-89dd-4bec-9484-eeae7984dc67.png" width="5%" height="5%"> Modality enable
+All the UI program is based on buttons that can be pressed multiple times, in particular for each modality we have two steps to follow to use it:
+* we first have to press the *enable button* that changes the value of a global variable `mod` that allows that selected modality to publish;
+* later we can use that modality with the buttons below the first; it can be used till another *enable button* is pressed.
+
+This way of distinguish the publication avoids multiple topics publishing at the same time, thus bringing an anomalous behaviour of the robot.
