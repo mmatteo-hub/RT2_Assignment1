@@ -47,8 +47,8 @@ We basically reproduced the same already present, so the main functionalities ar
 The program is also provided a map representing the same thing of *Rviz*, to make the user able to know what the robot is doing also without the utilization of *Rviz*.
 
 ### <img src="https://user-images.githubusercontent.com/62358773/160860930-875e5445-89dd-4bec-9484-eeae7984dc67.png" width="5%" height="5%"> Modality enable
-All the UI program is based on buttons that can be pressed multiple times, in particular for each modality we have two steps to follow to use it:
+All the UI program is based on buttons that can be pressed multiple times, in particular for one modality, the manual use one, we have two steps to follow to use it:
 * we first have to press the *enable button* that changes the value of a global variable `mod` that allows that selected modality to publish;
-* later we can use that modality with the buttons below the first; it can be used till another *enable button* is pressed.
+* later we can use that modality with the buttons below the first.
 
-This way of distinguish the publication avoids multiple topics publishing at the same time, thus bringing an anomalous behaviour of the robot.
+The other modalities has no enable button because they can publish periodically: of course, when the manual use is being used if another modality is selected by for example the publication of a goal, the `mod`variable is changed and the manual modality does not publish any longer thus avoiding overlapping of the infos published.
