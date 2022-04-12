@@ -52,3 +52,12 @@ All the UI program is based on buttons that can be pressed multiple times, in pa
 * later we can use that modality with the buttons below the first.
 
 The other modalities has no enable button because they can publish periodically: of course, when the manual use is being used if another modality is selected by for example the publication of a goal, the `mod`variable is changed and the manual modality does not publish any longer thus avoiding overlapping of the infos published.
+
+### <img src="https://user-images.githubusercontent.com/62358773/162995823-d51d500d-84c8-408c-b94d-5250846d1ee6.png" width=5% height=5%> Warning: correctness in execution
+In order to avoid overloading the system and running into some problems of visualization, we highly recommend to start the Jupyter Notebook as follows:
+* running it by terminal as explained in section above;
+* once it opens on the web page start the *kernel* by pressing the dedicated botton:
+ <img src="https://user-images.githubusercontent.com/62358773/162997563-028b91d1-b423-42eb-abec-3aa88319e7de.png" width=50% height=50%>
+
+* run each cell separately, being carefull to wait the image being displayed. This because, since the Notebook runs on the Docker image and it is also related to the simlation on Rviz and Gazebo, there coulde be some errors in parsing the data.
+* Once every cell has been started we can interact with them by the dedicated buttons properly displayed.
