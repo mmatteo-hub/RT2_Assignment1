@@ -10,13 +10,15 @@ The repository is divided into 4 different branches (the site for the complete d
 * <img src="https://user-images.githubusercontent.com/62358773/157435494-aad1604c-ecde-4b38-aa5e-13cef84f4620.png" width="2.5%" height="2.5%"> [**Doxygen**](https://www.doxygen.nl/manual/docblocks.html)
 * <img src="https://user-images.githubusercontent.com/62358773/157435593-53d7c0e1-919e-488c-845f-82988b838b20.png" width="2.5%" height="2.5%"> [**Jupyter**](https://jupyter.org)
 * <img src="https://user-images.githubusercontent.com/62358773/157435708-d0d6175d-b03d-4c89-a63b-fe3ad1ff269f.png" width="2.5%" height="2.5%"> [**Sphinx**](https://www.sphinx-doc.org/en/master/)
+* <img src="https://user-images.githubusercontent.com/62358773/163468945-01c6131c-fc6b-434a-933d-4099714f7f17.png" width="2.5%" height="2.5%">[**Statistics_RT1_Assignment1**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/statistics_RT1_Assignment1)
 
 Each one represents a different part for the documentation obtained in a different way.
 In particular:
 * [**main**](https://github.com/mmatteo-hub/RT2_Assignment1) : it is the main branch with the original project code taken from the [RT1 Assignment3](https://github.com/mmatteo-hub/RT1_Assignment3/tree/noetic);
 * [**doxygen**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/doxygen) : it is the branch with the *doxygen* documentation. All node functions are provided particular comment structure to allow the program working properly;
 * [**jupyter**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/jupyter) : it is the branch in which the UI is replaced by the *Jupyter* use;
-* [**sphinx**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx) : it is the branch with the *sphinx* documentation. It is provided the same code as *doxygen*-branch in order to make the *sphinx* program working properly.
+* [**sphinx**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx) : it is the branch with the *sphinx* documentation. It is provided the same code as *doxygen*-branch in order to make the *sphinx* program working properly;
+* [**statistics_RT1_Assignment1**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/statistics_RT1_Assignment1) : it is the branch in which we performed a statistical analysis between two different controllers.
 
 Each of the three different branches are explained in their branch respectively.
 
