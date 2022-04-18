@@ -32,6 +32,18 @@ vTurn_dir = 9.5
 vDrive = 40
 """int: Velocity module for driving"""
 
+start_flag = False
+"""bool: value to determine if the time has already been taken"""
+
+end_flag = False
+"""bool: value to determine if the time has already been taken"""
+
+start_lap = 0
+"""time: variable to store the instant of the start of the lap"""
+
+end_lap = 0
+"""time: variable to store the instant of the end of the lap"""
+
 # Function to make the robot drive: a positive 'speed' value makes the robot move forward, a negative 'speed' value makes the robot move backward; the time is the interval the movement lasts
 def drive(speed, seconds):
 	R.motors[0].m0.power = speed
@@ -123,9 +135,40 @@ def fnc_in():
 	drive(2*vDrive,0.1) # this function allows the robot moving forward
 	avoid_collision() # this function allows the robot avoiding the walls while moving
 	
+def time_computation():
+	global start_flag
+	global end_flag
+	global start_lap
+	global end_lap
+	
+	xR, yR = R.location
+	if -8.00 <= xR <= -7.00 and -3.70 <= yR <= -3.40:
+		if not(start_flag) and not(end_flag):
+			start_lap = time.time()
+			start_flag = True
+			f = open("lap_time.txt", 'a')
+			f.write("Start: " + str(start_lap) + "\n")
+			f.close()
+	if -7.60 <= xR <= -7.40 and -5.00 <= yR <= -3.00:
+		if not(end_flag) and start_flag:
+			end_lap = time.time()
+			end_flag = True
+			f = open("lap_time.txt", 'a')
+			f.write("End: " + str(end_lap) + "\n")
+			f.close()
+		
+	if start_flag and end_flag:
+		start_flag = False
+		end_flag = False
+		lap_time = end_lap - start_lap
+		f = open("lap_time.txt", 'a')
+		f.write("Lap: " + str(lap_time) + "\n\n")
+		f.close()
+			
 # main function of the code
 def main():
 	while 1: # 'while 1' allows the program running until it is stopped
+		time_computation()
 		fnc_in() # starts the movement
 		dist,rot_y = find_silver_token() # checks the presence of a silver token in the arena
 		if dist != -1: # token detected
