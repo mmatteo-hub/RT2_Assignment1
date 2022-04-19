@@ -1,0 +1,44 @@
+# This file contains the data recorded for the statistics analisys.           #
+# The file is updated and not overwritten every time the program is executed. #
+###############################################################################
+
+Tot distance (lap) [units]: 5532.35765842
+
+Tot distance (lap) [units]: 5641.57150274
+
+Tot distance (lap) [units]: 5730.09463966
+
+Tot distance (lap) [units]: 5651.46709123
+
+Tot distance (lap) [units]: 5542.14860236
+
+Tot distance (lap) [units]: 5739.10492754
+
+Tot distance (lap) [units]: 5299.46283412
+
+Tot distance (lap) [units]: 5923.10395632
+
+Tot distance (lap) [units]: 5583.09453627
+
+Tot distance (lap) [units]: 5821.98961345
+
+Tot distance (lap) [units]: 5366.09445915
+
+Tot distance (lap) [units]: 5551.19904510
+
+Tot distance (lap) [units]: 5452.73949268
+
+Tot distance (lap) [units]: 5408.74846390
+
+Tot distance (lap) [units]: 5457.50584193
+
+Tot distance (lap) [units]: 5289.63972843
+
+Tot distance (lap) [units]: 5387.59758816
+
+Tot distance (lap) [units]: 5289.87995093
+
+Tot distance (lap) [units]: 5603.12585714
+
+Tot distance (lap) [units]: 5503.15202409
+
