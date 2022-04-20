@@ -1,4 +1,6 @@
 from __future__ import print_function
+import tool_lib
+from tool_lib import *
 
 import time
 import math
@@ -32,30 +34,6 @@ vTurn_dir = 9.5
 
 vDrive = 40
 """int: Velocity module for driving"""
-
-start_flag = False
-"""bool: value to determine if the time has already been taken"""
-
-end_flag = False
-"""bool: value to determine if the time has already been taken"""
-
-start_lap = 0
-"""time: variable to store the instant of the start of the lap"""
-
-end_lap = 0
-"""time: variable to store the instant of the end of the lap"""
-
-dist_flag = False
-"""bool: flag to check the correctness of the distance computation"""
-
-xR = 0
-"""float: x coordinate of the robot position"""
-
-yR = 0
-"""float: y coordinate of the robot position"""
-
-distance_travelled = 0
-"""float: total distance travelled by the robot"""
 
 # Function to make the robot drive: a positive 'speed' value makes the robot move forward, a negative 'speed' value makes the robot move backward; the time is the interval the movement lasts
 def drive(speed, seconds):
@@ -147,67 +125,12 @@ def catch_token(dist,rot_y):
 def fnc_in():
 	drive(2*vDrive,0.1) # this function allows the robot moving forward
 	avoid_collision() # this function allows the robot avoiding the walls while moving
-	
-def distance_computation(actualX, actualY):
-	global distance_travelled
-	global dist_flag
-
-	dist_flag = True
-
-	xIn = -8
-	yIn = -4
-	
-	distance_travelled += math.sqrt(pow(actualX - xIn, 2) + pow(actualY - yIn, 2))
-	
-	xIn = actualX
-	yIn = actualY
-
-def time_computation():
-	global start_flag
-	global end_flag
-	global start_lap
-	global end_lap
-	global dist_flag
-	global xR
-	global yR
-	global distance_travelled
-	
-	xR, yR = R.location
-	distance_computation(xR, yR)
-	
-	if -8.00 <= xR <= -7.00 and -3.70 <= yR <= -3.40:
-		if not(start_flag) and not(end_flag):
-			start_lap = time.time()
-			start_flag = True
-			f = open("stats/lap_time.txt", 'a')
-			f.write("Str [s]: " + str(start_lap) + "\n")
-			f.close()
-	if -7.60 <= xR <= -7.40 and -5.00 <= yR <= -3.00:
-		if not(end_flag) and start_flag:
-			end_lap = time.time()
-			end_flag = True
-			f = open("stats/lap_time.txt", 'a')
-			f.write("End [s]: " + str(end_lap) + "\n")
-			f.close()
-			if dist_flag:
-				fd = open("stats/distance_travelled.txt", 'a')
-				fd.write("Tot distance (lap) [units]: " + str(distance_travelled) + "\n\n")
-				fd.close()
-				distance_travelled = 0
-				dist_flag = False
-		
-	if start_flag and end_flag:
-		start_flag = False
-		end_flag = False
-		lap_time = end_lap - start_lap
-		f = open("stats/lap_time.txt", 'a')
-		f.write("Lap [s]: " + str(lap_time) + "\n\n")
-		f.close()
 			
 # main function of the code
 def main():
 	while 1: # 'while 1' allows the program running until it is stopped
-		time_computation()
+		xRob, yRob = R.location
+		time_computation(xRob, yRob)
 		fnc_in() # starts the movement
 		dist,rot_y = find_silver_token() # checks the presence of a silver token in the arena
 		if dist != -1: # token detected
