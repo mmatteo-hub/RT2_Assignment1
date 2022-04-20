@@ -1,0 +1,6 @@
+# This file contains the data recorded for the statistics analisys.           #
+# The file is updated and not overwritten every time the program is executed. #
+###############################################################################
+
+Tot distance (lap) [units]: 13096.0035083
+

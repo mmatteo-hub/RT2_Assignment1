@@ -1,0 +1,8 @@
+# This file contains the data recorded for the statistics analisys.           #
+# The file is updated and not overwritten every time the program is executed. #
+###############################################################################
+
+Str [s]: 1650467605.69
+End [s]: 1650467777.06
+Lap [s]: 171.370728016
+

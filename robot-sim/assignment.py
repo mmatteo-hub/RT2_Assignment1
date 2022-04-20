@@ -1,6 +1,8 @@
 from __future__ import print_function
 import time
 from sr.robot import *
+import tool_lib
+from tool_lib import *
 
 R = Robot()
 """ instance of the class Robot"""
@@ -109,6 +111,8 @@ def check_left_side():
    	return dist
   	
 while 1:
+    xRob, yRob = R.location
+    time_computation(xRob, yRob)
     dist, rot_y = find_silver_token()
     go = True
     if dist < 2.0:
