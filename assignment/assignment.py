@@ -1,4 +1,6 @@
 from __future__ import print_function
+import sys
+sys.path.append("../")
 import tool_lib
 from tool_lib import *
 
@@ -128,6 +130,7 @@ def fnc_in():
 			
 # main function of the code
 def main():
+	save_path()
 	while 1: # 'while 1' allows the program running until it is stopped
 		xRob, yRob = R.location
 		time_computation(xRob, yRob)

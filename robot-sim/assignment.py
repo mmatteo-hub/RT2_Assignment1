@@ -1,6 +1,8 @@
 from __future__ import print_function
 import time
+import sys
 from sr.robot import *
+sys.path.append("../")
 import tool_lib
 from tool_lib import *
 
@@ -109,7 +111,8 @@ def check_left_side():
 	return 100
     else:
    	return dist
-  	
+
+save_path()
 while 1:
     xRob, yRob = R.location
     time_computation(xRob, yRob)
