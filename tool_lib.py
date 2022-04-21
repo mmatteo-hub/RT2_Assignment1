@@ -53,20 +53,20 @@ def time_computation(xPass, yPass):
 		if not(flag.start_flag) and not(flag.end_flag):
 			flag.start_lap = time.time()
 			flag.start_flag = True
-			f = open(str(path.directory) + "/stats/lap_time_" + str(path.directory) + ".txt", 'a')
+			f = open("../" + str(path.directory) + "/stats/lap_time_" + str(path.directory) + ".txt", 'a')
 			f.write("Str [s]: " + str(flag.start_lap) + "\n")
 			f.close()
 	if -7.60 <= flag.xR <= -7.40 and -5.00 <= flag.yR <= -3.00:
 		if not(flag.end_flag) and flag.start_flag:
 			flag.end_lap = time.time()
 			flag.end_flag = True
-			f = open(str(path.directory) + "/stats/lap_time_" + str(path.directory) + ".txt", 'a')
+			f = open("../" + str(path.directory) + "/stats/lap_time_" + str(path.directory) + ".txt", 'a')
 			f.write("End [s]: " + str(flag.end_lap) + "\n")
 			f.close()
 			if flag.dist_flag:
-				f = open(str(path.directory) + "/stats/distance_travelled_" + str(path.directory) + ".txt", 'a')
-				fd.write("Tot distance (lap) [units]: " + str(flag.distance_travelled) + "\n\n")
-				fd.close()
+				f = open("../" + str(path.directory) + "/stats/distance_travelled_" + str(path.directory) + ".txt", 'a')
+				f.write("Tot distance (lap) [units]: " + str(flag.distance_travelled) + "\n\n")
+				f.close()
 				flag.distance_travelled = 0
 				flag.dist_flag = False
 		
@@ -74,6 +74,6 @@ def time_computation(xPass, yPass):
 		flag.start_flag = False
 		flag.end_flag = False
 		flag.lap_time = flag.end_lap - flag.start_lap
-		f = open(str(path.directory) + "/stats/lap_time_" + str(path.directory) + ".txt", 'a')
+		f = open("../" + str(path.directory) + "/stats/lap_time_" + str(path.directory) + ".txt", 'a')
 		f.write("Lap [s]: " + str(flag.lap_time) + "\n\n")
 		f.close()

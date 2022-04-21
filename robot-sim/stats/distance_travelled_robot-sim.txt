@@ -6,3 +6,5 @@ Tot distance (lap) [units]: 13096.0035083
 
 Tot distance (lap) [units]: 13076.3693437
 
+Tot distance (lap) [units]: 13993.202296
+
