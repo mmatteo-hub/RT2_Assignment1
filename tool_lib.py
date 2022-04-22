@@ -3,6 +3,9 @@ import math
 import os
 import numpy as np
 
+xIn = -8
+yIn = -4
+
 class Path:
 	def __init__(self, directory):
 		self.directory = directory
@@ -34,10 +37,10 @@ def save_path():
 	path.directory = pt[lst[cnt-1]+1:]
 
 def distance_computation(actualX, actualY):
+	global xIn
+	global yIn
+	
 	flag.dist_flag = True
-
-	xIn = -8
-	yIn = -4
 	
 	flag.distance_travelled += math.sqrt(pow(actualX - xIn, 2) + pow(actualY - yIn, 2))
 	

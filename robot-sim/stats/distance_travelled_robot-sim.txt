@@ -2,9 +2,33 @@
 # The file is updated and not overwritten every time the program is executed. #
 ###############################################################################
 
-Tot distance (lap) [units]: 13096.0035083
+Tot distance (lap) [units]: 57.0927738673
 
-Tot distance (lap) [units]: 13076.3693437
+Tot distance (lap) [units]: 57.6141133183
 
-Tot distance (lap) [units]: 13993.202296
+Tot distance (lap) [units]: 75.1145914926
+
+Tot distance (lap) [units]: 57.1551293711
+
+Tot distance (lap) [units]: 57.6051308044
+
+Tot distance (lap) [units]: 58.4047653074
+
+Tot distance (lap) [units]: 57.9652811914
+
+Tot distance (lap) [units]: 57.0077838908
+
+Tot distance (lap) [units]: 56.4502623303
+
+Tot distance (lap) [units]: 55.5709277268
+
+Tot distance (lap) [units]: 56.2700645262
+
+Tot distance (lap) [units]: 54.0357248844
+
+Tot distance (lap) [units]: 82.1650580605
+
+Tot distance (lap) [units]: 54.0844935136
+
+Tot distance (lap) [units]: 54.6984400017
 
