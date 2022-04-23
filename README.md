@@ -7,7 +7,8 @@ In our code we used a few functions to collect some data and analise them. We wa
 The statistical data we collected are:
 * Lap time: the time of the lap completed by the robot calculated between two point identified as the start and the end for the statistics;
 * Distance travelled by the robot: total distance travelled in terms of unit of the map;
-* Number of corrections: total number of correction done by the robot in a single lap due to a wrong trajectory previously computed or due to some obstacles met along the path followed;
+* Number of corrections: total number of correction done by the robot in a single lap due to a wrong trajectory previously computed or due to some obstacles met along the path followed
+  * the same statistics have been tested on a faster lap without obstacles to check the velocity on the lap and the cirrection of the turn and/or corrections done by the robot during its drive;
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158230379-3c1a609e-e437-4c90-9f94-90f70d162e8a.png" width="5%" height="5%"> Repository organization
 The repository has two main folders:
