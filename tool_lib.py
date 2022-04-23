@@ -5,7 +5,7 @@ import numpy as np
 
 xIn = -8
 yIn = -4
-stats_path_name = "1-original_arena"
+stats_path_name = "2-fast_arena"
 
 class Path:
 	def __init__(self, directory):

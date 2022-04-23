@@ -52,71 +52,71 @@ class SunnySideUpArena(Arena):
             self.objects.append(token)
             count = count+1
         
-        #for i in range(55):
-        #    token = Token(self, i, damping=10)
-        #    token.location = (-6.75+i*0.25, 3)
-        #    self.objects.append(token)
+        for i in range(55):
+            token = Token(self, i, damping=10)
+            token.location = (-6.75+i*0.25, 3)
+            self.objects.append(token)
 	
         #for i in range(71):
         #    token = Token(self, i, damping=10)
         #    token.location = (-8.75+i*0.25, 5)
         #    self.objects.append(token) 
             
-        for i in range(13):
-             token = GoldToken(self, count)
-             token.location = (-6.75+i*0.25, 3)
-             self.objects.append(token)
-             count = count+1
+        #for i in range(13):
+        #     token = GoldToken(self, count)
+        #     token.location = (-6.75+i*0.25, 3)
+        #     self.objects.append(token)
+        #     count = count+1
 	
-        for i in range(29):
+        for i in range(42):
             token = GoldToken(self, count)
             token.location = (-8.75+i*0.25, 5)
             self.objects.append(token) 
             count = count+1
             
-        for i in range(16):
-            token = GoldToken(self, count)
-            token.location = (-3.5, -1+i*0.25)
-            self.objects.append(token) 
-            count = count+1
+        #for i in range(16):
+        #    token = GoldToken(self, count)
+        #    token.location = (-3.5, -1+i*0.25)
+        #    self.objects.append(token) 
+        #    count = count+1
             
-        for i in range(16):
-            token = GoldToken(self, count)
-            token.location = (-1.5, 1+i*0.25)
-            self.objects.append(token) 
-            count = count+1
+        #for i in range(16):
+        #    token = GoldToken(self, count)
+        #    token.location = (-1.5, 1+i*0.25)
+        #    self.objects.append(token) 
+        #    count = count+1
             
         
-        for i in range(11):
-            token = GoldToken(self, count)
-            token.location = (-1.25+i*0.25, 0.75)
-            self.objects.append(token)
-            count = count+1
+        #for i in range(11):
+        #    token = GoldToken(self, count)
+        #    token.location = (-1.25+i*0.25, 0.75)
+        #    self.objects.append(token)
+        #    count = count+1
             
-        for i in range(27):
-            token = GoldToken(self, count)
-            token.location = (-3.25+i*0.25, -1.25)
-            self.objects.append(token)
-            count = count+1
+        #for i in range(27):
+        #    token = GoldToken(self, count)
+        #    token.location = (-3.25+i*0.25, -1.25)
+        #    self.objects.append(token)
+        #    count = count+1
       
         
-        for i in range(16):
-            token = GoldToken(self, count)
-            token.location = (3.5, -1+i*0.25)
-            self.objects.append(token)
-            count = count+1 
+        #for i in range(16):
+        #    token = GoldToken(self, count)
+        #    token.location = (3.5, -1+i*0.25)
+        #    self.objects.append(token)
+        #    count = count+1 
             
-        for i in range(16):
-            token = GoldToken(self, count)
-            token.location = (1.5, 1+i*0.25)
-            self.objects.append(token) 
-            count = count+1
+        #for i in range(16):
+        #    token = GoldToken(self, count)
+        #    token.location = (1.5, 1+i*0.25)
+        #    self.objects.append(token) 
+        #    count = count+1
             
-        for i in range(13):
-             token = GoldToken(self, count)
-             token.location = (3.75+i*0.25, 3)
-             self.objects.append(token)
-             count = count+1
+        #for i in range(13):
+        #     token = GoldToken(self, count)
+        #     token.location = (3.75+i*0.25, 3)
+        #     self.objects.append(token)
+        #     count = count+1
 	
         for i in range(29):
             token = GoldToken(self, count)
@@ -146,43 +146,7 @@ class SunnySideUpArena(Arena):
             token = GoldToken(self, count)
             token.location = (7, -2.75+i*0.25)
             self.objects.append(token) 
-            count = count+1
-            
-        token=SilverToken(self,count)
-        token.location = (-8, 0)
-        self.objects.append(token) 
-        count = count+1
-        
-        token=SilverToken(self,count)
-        token.location = (-6, 3.75)
-        self.objects.append(token) 
-        count = count+1
-        
-        token=SilverToken(self,count)
-        token.location = (-2.5, 1.25)
-        self.objects.append(token) 
-        count = count+1
-        
-        token=SilverToken(self,count)
-        token.location = (1.5, -0.25)
-        self.objects.append(token) 
-        count = count+1
-        
-        token=SilverToken(self,count)
-        token.location = (6, 3.75)
-        self.objects.append(token) 
-        count = count+1
-        
-        token=SilverToken(self,count)
-        token.location = (8, 0.0)
-        self.objects.append(token) 
-        count = count+1
-        
-        token=SilverToken(self,count)
-        token.location = (-4.0, -4.0)
-        self.objects.append(token) 
-        count = count+1
-        
+            count = count+1       
 
     def draw_background(self, surface, display):
         super(SunnySideUpArena, self).draw_background(surface, display)
