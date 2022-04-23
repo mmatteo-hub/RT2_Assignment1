@@ -17,6 +17,6 @@ hold on;
 stairs(distances, 'b', 'LineWidth', 2)
 plot([1 length(distances)], [meanValue meanValue], 'r-', 'LineWidth', 2);
 xlabel('Number of laps')
-ylabel('Lap time [s]')
+ylabel('Lap distance [units]')
 legend('Lap Time', 'Mean Value')
 title(['Lap distance [units] along the basic arena and mean value with standard deviation of: ', num2str(standardDeviation), ' [units]'])

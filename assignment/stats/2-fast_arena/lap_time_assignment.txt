@@ -1,3 +1,7 @@
+# This file contains the data recorded for the statistics analisys.           #
+# The file is updated and not overwritten every time the program is executed. #
+###############################################################################
+
 Str [s]: 1650733286.83
 End [s]: 1650733359.27
 Lap [s]: 72.4350321293
@@ -29,9 +33,6 @@ Lap [s]: 74.8567609787
 Str [s]: 1650733812.11
 End [s]: 1650733883.13
 Lap [s]: 71.0200679302
-# This file contains the data recorded for the statistics analisys.           #
-# The file is updated and not overwritten every time the program is executed. #
-###############################################################################
 
 Str [s]: 1650733883.43
 End [s]: 1650733961.14

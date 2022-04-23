@@ -2,7 +2,7 @@
 clear all
 close all
 % import data
-textFileData = readtable('../../robot-sim/stats/1-original_arena/lap_time_robot-sim.txt');
+textFileData = readtable('../../assignment/stats/2-fast_arena/lap_time_assignment.txt');
 arrayData = textFileData(:,2);
 times = table2array(arrayData);
 lapTimes = zeros(length(times)/3,1);
