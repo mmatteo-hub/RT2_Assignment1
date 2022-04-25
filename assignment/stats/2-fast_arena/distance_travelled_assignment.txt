@@ -42,3 +42,23 @@ Tot distance (lap) [units]: 49.0438439742
 
 Tot distance (lap) [units]: 49.964688591
 
+Tot distance (lap) [units]: 48.8729546495
+
+Tot distance (lap) [units]: 50.6608612865
+
+Tot distance (lap) [units]: 48.7816890284
+
+Tot distance (lap) [units]: 98.5568628208
+
+Tot distance (lap) [units]: 48.7565666678
+
+Tot distance (lap) [units]: 48.7207479707
+
+Tot distance (lap) [units]: 48.5916038797
+
+Tot distance (lap) [units]: 48.4988538866
+
+Tot distance (lap) [units]: 49.8696036126
+
+Tot distance (lap) [units]: 51.0064378563
+
