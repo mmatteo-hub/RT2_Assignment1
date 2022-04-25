@@ -2,13 +2,10 @@
 clear all
 close all
 % import data
-% choose between:
-% folder -> (assignment, robot-sim)
-% arena -> (1-orignal_arnea, 2-fast_arena)
-folder = 'assignment';
-arena = '1-original_arena';
 
-textFileData = readtable(['../../', num2str(folder), '/stats/', num2str(arena), '/distance_travelled_assignment.txt']);
+folder = ''
+
+textFileData = readtable('../../assignment/stats/1-original_arena/distance_travelled_assignment.txt');
 arrayData = textFileData(:,5);
 distances = table2array(arrayData);
 
