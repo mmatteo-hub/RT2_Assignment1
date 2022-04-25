@@ -2,7 +2,13 @@
 clear all
 close all
 % import data
-textFileData = readtable('../../assignment/stats/1-original_arena/lap_time_assignment.txt');
+% choose between:
+% folder -> (assignment, robot-sim)
+% arena -> (1-orignal_arnea, 2-fast_arena)
+folder = 'robot-sim';
+arena = '2-fast_arena';
+
+textFileData = readtable(['../../', num2str(folder), '/stats/', num2str(arena), '/lap_time_', num2str(folder), '.txt']);
 arrayData = textFileData(:,2);
 times = table2array(arrayData);
 lapTimes = zeros(length(times)/3,1);
@@ -34,7 +40,7 @@ hold on;
 timeSorted = sort(lapTimes);
 h = histogram(timeSorted, 'Normalization','pdf');
 
-y = timeSorted(1):timeSorted(end);
+y = timeSorted(1):0.1:timeSorted(end);
 mu = meanValue;
 sigma = standardDeviation;
 f = exp(-(y-mu).^2./(2*sigma^2))./(sigma*sqrt(2*pi));
