@@ -42,3 +42,12 @@ We report an example of errors below:
 Theese data have to be deleted from the `.txt` file in order to avoid having fake data during the analisys.
 
 ## <img src="https://user-images.githubusercontent.com/62358773/164914443-71e8db15-e1bf-42d3-babe-71077f0f9c72.png" width="5%" height="5%"> Results
+The statistical results have been tested and obtained by MATLAB.
+In order to try and see the code there is a folder named `scripts` in which there are the files used.
+
+The only thing it is important to change when the code is run is to check:
+* folder: chosen between *assignment* and *robot-sim*;
+* arena: chosen between *1-original_arena* and *2-fast_arena*
+
+The output is 2 images and a variable to be read from the Workspace.
+In order to understand the results it is suggested to read the brief report which explains all the procedure of ata analysis.
