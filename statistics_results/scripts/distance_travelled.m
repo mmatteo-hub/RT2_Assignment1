@@ -40,3 +40,6 @@ plot(y,f,'LineWidth',2);
 
 legend('Hisogram','Normal distribution');
 title(['Comparison between histogram and normal distribution with mu = ', num2str(meanValue),' and sigma = ', num2str(standardDeviation)]);
+
+% Lilliefors Test
+lilTest = lillietest(distances);
