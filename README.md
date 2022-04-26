@@ -20,7 +20,7 @@ In particular:
 * [**sphinx**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/sphinx) : it is the branch with the *sphinx* documentation. It is provided the same code as *doxygen*-branch in order to make the *sphinx* program working properly;
 * [**statistics_RT1_Assignment1**](https://github.com/mmatteo-hub/RT2_Assignment1/tree/statistics_RT1_Assignment1) : it is the branch in which we performed a statistical analysis between two different controllers.
 
-Each of the three different branches are explained in their branch respectively.
+Each of the four different branches are explained in their branch respectively.
 
 ### <img src="https://user-images.githubusercontent.com/62358773/157433800-cbf3f310-46d9-4bdf-9afb-6993a2045f9f.png" width="5%" height="5%"> Switching the branch 
 In order to switch the branch and to see the documentation for each one we have to use a temrminal window or a GUI providing the same functionaloties.
