@@ -1,8 +1,8 @@
 from __future__ import print_function
 import sys
 sys.path.append("../")
-import tool_lib
-from tool_lib import *
+import tool_lib2
+from tool_lib2 import *
 
 import time
 import math

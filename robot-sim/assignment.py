@@ -3,8 +3,8 @@ import time
 import sys
 from sr.robot import *
 sys.path.append("../")
-import tool_lib
-from tool_lib import *
+import tool_lib2
+from tool_lib2 import *
 
 R = Robot()
 """ instance of the class Robot"""
