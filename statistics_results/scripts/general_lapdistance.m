@@ -19,6 +19,7 @@ textFileData2 = readtable(['../../', num2str(folder2), '/stats/', num2str(arena2
 arrayData2 = textFileData2(:,5);
 distances2 = table2array(arrayData2);
 
+
 % Lilliefors Test
 lilTest1 = lillietest(distances1);
 lilTest2 = lillietest(distances2);

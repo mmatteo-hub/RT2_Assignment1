@@ -5,7 +5,7 @@ close all
 % choose between:
 % folder -> (assignment, robot-sim)
 % arena -> (1-orignal_arnea, 2-fast_arena)
-folder = 'robot-sim';
+folder = 'assignment';
 arena = '2-fast_arena';
 
 textFileData = readtable(['../../', num2str(folder), '/stats/', num2str(arena), '/distance_travelled_', num2str(folder), '.txt']);
