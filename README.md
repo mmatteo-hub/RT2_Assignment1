@@ -7,8 +7,10 @@ In our code we used a few functions to collect some data and analise them. We wa
 The statistical data we collected are:
 * Lap time: the time of the lap completed by the robot calculated between two point identified as the start and the end for the statistics;
 * Distance travelled by the robot: total distance travelled in terms of unit of the map;
-* Number of corrections: total number of correction done by the robot in a single lap due to a wrong trajectory previously computed or due to some obstacles met along the path followed
-  * the same statistics have been tested on a faster lap without obstacles to check the velocity on the lap and the cirrection of the turn and/or corrections done by the robot during its drive;
+
+These statistical analysis have been teste among two different arenas for an amount of 30 iterations per arena and per controller; then in order to test the best algorithm in general, of course among one of the data acquired, we modified the original arena by moving the obstacles and then acquiring the same data as for the first test.
+
+All the results and comment have been reported into an apposite report.
 
 ## <img src="https://user-images.githubusercontent.com/62358773/158230379-3c1a609e-e437-4c90-9f94-90f70d162e8a.png" width="5%" height="5%"> Repository organization
 The repository has two main folders:
@@ -50,4 +52,4 @@ The only thing it is important to change when the code is run is to check:
 * arena: chosen between *1-original_arena* and *2-fast_arena*
 
 The output is 2 images and a variable to be read from the Workspace.
-In order to understand the results it is suggested to read the brief report which explains all the procedure of ata analysis.
+In order to understand the results it is suggested to read the brief [report](https://github.com/mmatteo-hub/RT2_Assignment1/blob/statistics_RT1_Assignment1/statistics_results/report/RT2__Report_RT2_Assignment1_pt2.pdf) which explains all the procedure of data analysis.
