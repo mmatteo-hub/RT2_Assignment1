@@ -27,6 +27,8 @@ In order to start the simulation we have to type: `./run.sh _name_` where *_name
 * assignment
 * robot-sim
 
+For the general statistics analysis we have to modify the file `sunny_side_up_arena.py` of the arena for the [assignment controller](https://github.com/mmatteo-hub/RT2_Assignment1/blob/statistics_RT1_Assignment1/assignment/sr/robot/arenas/sunny_side_up_arena.py) and the [robot-sim controller](https://github.com/mmatteo-hub/RT2_Assignment1/blob/statistics_RT1_Assignment1/robot-sim/sr/robot/arenas/sunny_side_up_arena.py) and run the simulation as before.
+
 ### <img src="https://user-images.githubusercontent.com/62358773/164914022-5eff9f0f-eedb-4919-b29d-c362391b5ac0.png" width="5%" height="5%"> Library for the statistics
 In order to avoid including too many additions to the origin code it was provided a library in which there are all the functions needed to do statistics.
 The most important thing is to change just one parameter: `stats_path_name` which is a *string* specifying the folder in which we have the file we want to write into; missing this step brings to errors in file writing since we will combine data that are not related to each other.
