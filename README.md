@@ -8,7 +8,7 @@ The statistical data we collected are:
 * Lap time: the time of the lap completed by the robot calculated between two point identified as the start and the end for the statistics;
 * Distance travelled by the robot: total distance travelled in terms of unit of the map;
 
-These statistical analysis have been teste among two different arenas for an amount of 30 iterations per arena and per controller; then in order to test the best algorithm in general, of course among one of the data acquired, we modified the original arena by moving the obstacles and then acquiring the same data as for the first test.
+These statistical analysis have been tested among two different arenas for an amount of 30 iterations per arena and per controller; then in order to test the best algorithm in general, of course among one of the data acquired, we modified the original arena by moving the obstacles and then acquiring the same data as for the first test.
 
 All the results and comment have been reported into an apposite report.
 
@@ -26,6 +26,7 @@ The main folder contains a shell script to run the code: `run.sh`, it a paramete
 In order to start the simulation we have to type: `./run.sh _name_` where *_name_* is:
 * assignment
 * robot-sim
+* statistics_results
 
 For the general statistics analysis we have to modify the file `sunny_side_up_arena.py` of the arena for the [assignment controller](https://github.com/mmatteo-hub/RT2_Assignment1/blob/statistics_RT1_Assignment1/assignment/sr/robot/arenas/sunny_side_up_arena.py) and the [robot-sim controller](https://github.com/mmatteo-hub/RT2_Assignment1/blob/statistics_RT1_Assignment1/robot-sim/sr/robot/arenas/sunny_side_up_arena.py) and run the simulation as before.
 
@@ -53,5 +54,5 @@ The only thing it is important to change when the code is run is to check:
 * folder: chosen between *assignment* and *robot-sim*;
 * arena: chosen between *1-original_arena* and *2-fast_arena*
 
-The output is 2 images and a variable to be read from the Workspace.
+The output is composed of 2 images and a variable to be read from the *Workspace*.
 In order to understand the results it is suggested to read the brief [report](https://github.com/mmatteo-hub/RT2_Assignment1/blob/statistics_RT1_Assignment1/statistics_results/report/RT2__Report_RT2_Assignment1_pt2.pdf) which explains all the procedure of data analysis.
