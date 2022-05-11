@@ -18,7 +18,7 @@ JupyterLab is the next-generation user interface, including notebooks.
 JupyterLab uses the same Notebook server and file format as the classic Jupyter Notebook to be fully compatible with the existing notebooks and kernels. The Classic Notebook and Jupyterlab can run side to side on the same computer. One can easily switch between the two interfaces.
 We can install it by using `pip3 install jupyterlab` and make it visible on the host side by `jupyter lab --allow-root --ip 0.0.0.0`.
 
-For JupyterLab we need to install Node.js by
+For JupyterLab we need to install *Node.js* by
 `curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh` 
 `bash nodesource_setup.sh`
 `apt-get install -y nodejs`
@@ -36,13 +36,17 @@ Moreover, to use the *Jupyter* User Interface implemented we cam use the command
 Once bot the simulation and the Notebook are running we can interact with the robot through the UI provided.
 We basically reproduced the same already present, so the main functionalities are four:
 * Publish a position *(x,y)* that the robot has to reach;
-  [figure of the pub pos]
-* Drive the robot with the keyboard (here substituted by a graphics representing a keyboard);
-  [figure of the keyboard]
+ 
+ <img src="https://user-images.githubusercontent.com/62358773/167815375-9d49e862-1a55-42fa-a24f-2046ef94001f.jpg" width="20%" height="20%">
+
 * Cancel the current goal;
-  [[figure of the cancel goal]]
-* Quit the program.
-  [figure of the quit]
+ 
+ <img src="https://user-images.githubusercontent.com/62358773/167815490-4ef92e2a-29c6-4092-82d7-72fa54714f35.jpg" width="20%" height="20%">
+
+* Drive the robot with the keyboard, having the possibility of using an avoid collision that makes the robot able to avoid collisions with walls or possible obstacles:(here substituted by a graphics representing a keyboard);
+ 
+ <img src="https://user-images.githubusercontent.com/62358773/167815551-c3363373-ab64-4186-a735-4e09f61fb36f.jpg" width="45%" height="45%">
+
 
 The program is also provided a map representing the same thing of *Rviz*, to make the user able to know what the robot is doing also without the utilization of *Rviz*.
 
